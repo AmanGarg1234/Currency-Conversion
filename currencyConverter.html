@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Currency Converter">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-input type="number" label="Amount in INR" value={inrAmount} onchange={handleAmountChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-combobox label="Select Currency" value={selectedCurrency} options={currencyOptions} onchange={handleCurrencyChange}></lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-button label="Convert" onclick={convertCurrency}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div if:true={convertedAmount}>
+            Converted Amount: {convertedAmount}
+        </div>
+    </lightning-card>
+</template>
